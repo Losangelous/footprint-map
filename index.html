@@ -1269,4 +1269,4 @@ setTimeout(()=>{
 },40);
 })();
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script></body></html>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){var had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",function(){if(had&&!window.__rl){window.__rl=1;location.reload();}});navigator.serviceWorker.register("sw.js").then(function(r){r.update();}).catch(function(){});});}</script></body></html>
