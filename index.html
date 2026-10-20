@@ -649,8 +649,6 @@ function renderRatios(){
   box.append(ratioRow(tr('rWorld'),vs,SOV_N,extra>0?tr('rExtra',{n:extra}):null));
   if(PV.length) box.append(ratioRow(tr('rAdm1'),provLit.size,PV.length,regLitCo.size?(lang==='t'?regLitCo.size+' 個國家／地區已有點亮':regLitCo.size+' 个国家／地区已有点亮'):null));
   const cnt=co=>regLitCo.has(co)?regLitCo.get(co).size:0;
-  if(CHN_I>=0) box.append(ratioRow(tr('rCN'),cnt(CHN_I),REG_N.get(CHN_I)||0));
-  if(TWN_I>=0) box.append(ratioRow(tr('rTW'),cnt(TWN_I),REG_N.get(TWN_I)||0));
   if(visitedCo.size){
     const rows=[...visitedCo].map(co=>({co,n:cnt(co),t:REG_N.get(co)||0}));
     rows.sort((a,b)=>(b.t?b.n/b.t:-1)-(a.t?a.n/a.t:-1)||b.n-a.n||cname(a.co).localeCompare(cname(b.co),'zh'));
